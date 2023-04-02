@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "module": "ESNext",
+    "lib": ["es6", "dom"],
+    "jsx": "react",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true
+  },
+  "include": ["src/**/*", "*.scss.d.ts","declaration.d.ts"],
+  "exclude": ["*.scss"]
+}
