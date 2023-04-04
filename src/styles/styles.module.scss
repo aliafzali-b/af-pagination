@@ -1,0 +1,24 @@
+.pagination-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  .single-pagination-button,
+  .single-pagination-nav-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    min-width: 50px;
+    min-height: 50px;
+    background-color: white;
+    color: black;
+    transition: 0.2s ease-in-out;
+    &.active {
+      border-color: blue;
+    }
+    &:hover:not(.active) {
+      border-color: rgba(0, 0, 255, 0.4);
+    }
+  }
+}
