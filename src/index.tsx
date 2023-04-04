@@ -51,20 +51,50 @@ const AF_Pagination: FC<props> = ({
         </button>
       )}
       {finalPages.map((page) => (
-        <button
-          key={`af-pagination-page-${page}`}
-          className={`${styles["single-pagination-button"]} ${
-            styles["prev-page-button"]
-          } ${current_page === page ? styles["active"] : ""}`}
-          onClick={() => current_page !== page && set_page(page)}
-        >
-          {page}
-        </button>
+        <>
+          {current_page < totalPage - 3 && page === totalPage - 1 && (
+            <span className={`${styles["dots"]}`}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+              </svg>
+            </span>
+          )}
+          <button
+            key={`af-pagination-page-${page}`}
+            className={`${styles["single-pagination-button"]} ${
+              styles["prev-page-button"]
+            } ${current_page === page ? styles["active"] : ""}`}
+            onClick={() => current_page !== page && set_page(page)}
+          >
+            {page}
+          </button>
+          {current_page > 4 && page === 2 && (
+            <span className={`${styles["dots"]}`}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+              </svg>
+            </span>
+          )}
+        </>
       ))}
       {current_page !== totalPage && (
         <button
           className={`${styles["single-pagination-nav-button"]} ${styles["next-page-button"]}`}
-          onClick={() => current_page > 1 && set_page(current_page - 1)}
+          onClick={() =>
+            current_page !== totalPage && set_page(current_page + 1)
+          }
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
