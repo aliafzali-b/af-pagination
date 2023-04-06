@@ -1,6 +1,6 @@
 {
   "name": "af-pagination",
-  "version": "0.0.7",
+  "version": "0.1.7",
   "type": "module",
   "description": "",
   "main": "./dist/main.mjs",
@@ -18,7 +18,13 @@
     "type": "git",
     "url": "git+https://github.com/AliAfzali-b/af-pagination.git"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "pagination",
+    "typescript",
+    "component",
+    "simple pagination"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
