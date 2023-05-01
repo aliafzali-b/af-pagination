@@ -22,6 +22,11 @@ jobs:
       - name: Pack project
         run: npm pack
 
+      - name: Login to npm registry
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        run: npm login --registry=https://registry.npmjs.org/ --always-auth
+
       - name: Publish package
         run: npm publish
         env:
