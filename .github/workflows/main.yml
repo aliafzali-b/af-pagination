@@ -22,9 +22,6 @@ jobs:
       - name: Pack project
         run: npm pack
 
-      - name: Login to npm
-        run: npm login
-
       - name: Publish package
         run: npm publish
         env:
