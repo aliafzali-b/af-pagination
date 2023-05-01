@@ -16,6 +16,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Authenticate with NPM Registry
+        run: npm adduser
+
       - name: Build project
         run: npm run build
 
