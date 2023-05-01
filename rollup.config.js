@@ -3,7 +3,12 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import postcss from "rollup-plugin-postcss";
 import json from "@rollup/plugin-json";
-
+import del from "rollup-plugin-delete";
+import package_json from "./package.json" assert { type: "json" };
+var package_name = package_json.name;
+//var package_version = package_json.version;
+//var package_file = `${package_name}-${package_version}.tgz`;
+var package_file_regex = `${package_name}-*.tgz`;
 export default {
   input: "src/index.tsx",
   output: [
@@ -22,7 +27,14 @@ export default {
       format: "esm",
     },
   ],
-  plugins: [resolve(), commonjs(), typescript(), postcss(), json()],
+  plugins: [
+    resolve(),
+    commonjs(),
+    typescript(),
+    postcss(),
+    json(),
+    del({ targets: ["dist/*", package_file_regex] }),
+  ],
   external: ["react", "react-dom"],
   // allow circular dependencies
   onwarn: function (warning, warn) {

@@ -42,6 +42,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^3.20.2",
+    "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-sass": "^1.12.19",
     "rollup-plugin-scss": "^4.0.0",
