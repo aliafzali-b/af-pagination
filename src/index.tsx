@@ -7,7 +7,7 @@ import SingleBtn from "./SingleBtn";
 import Dots from "./Dots";
 import { createArray } from "./helper";
 
-const AF_Pagination: FC<AF_Pagination_props> = (props) => {
+const AfPagination: FC<AF_Pagination_props> = (props) => {
   let {
     per_page,
     current_page, //1,2,3,...
@@ -56,4 +56,4 @@ const AF_Pagination: FC<AF_Pagination_props> = (props) => {
     </div>
   );
 };
-export default AF_Pagination;
+export default AfPagination;

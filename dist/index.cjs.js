@@ -89,7 +89,7 @@ function createArray(length) {
     // Output: [1, 2, 3, 4, 5, 6]
 }
 
-const AF_Pagination = (props) => {
+const AfPagination = (props) => {
     let { per_page, current_page, //1,2,3,...
     total_count, total_pages, show_if_only_one_page, } = props;
     let totalPage = 1;
@@ -124,4 +124,4 @@ const AF_Pagination = (props) => {
         !props.hideNavigation && current_page !== totalPage && (React.createElement(NextBtn, Object.assign({}, props, { totalPage: totalPage })))));
 };
 
-exports.default = AF_Pagination;
+exports.default = AfPagination;
